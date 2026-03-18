@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Cleaning Robot - HLD</title>
+    <link rel="stylesheet" href="style_eventos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="background-glow"></div>   
+    <header class="hero">
+        <div class="container">
+            <h1>Solar Panel Cleaning Robot</h1>
+            <p class="subtitle">Sistema automatizado de detecção de sujeira e limpeza de painéis solares com visão computacional e inteligência artificial embarcada.</p>
+        </div>
+    </header>
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title">Arquitetura do Sistema</h2>
+            <p class="section-subtitle">Visão geral dos componentes e suas conexões</p>
+           
+            <div class="flowchart">           
+                <div class="node-container">
+                    <div class="node-label">CONTROLE</div>
+                    <div class="node card">
+                        <i data-lucide="smartphone" class="node-icon"></i>
+                        <h3>App Mobile</h3>
+                        <p>Interface de controle remoto do robô via smartphone</p>
+                    </div>
+                </div>
+
+                <div class="connector-v">
+                    <div class="connector-label">WiFi</div>
+                </div>
+                <div class="node-container">
+                    <div class="node-label">REDE</div>
+                    <div class="node card">
+                        <i data-lucide="wifi" class="node-icon"></i>
+                        <h3>Comunicação WiFi</h3>
+                        <p>Protocolo de comunicação sem fio entre app e controlador</p>
+                    </div>
+                </div>
+                <div class="connector-v">
+                    <div class="connector-label">Dados</div>
+                </div>
+                <div class="node-container">
+                    <div class="node-label">CONTROLADOR</div>
+                    <div class="node card highlight">
+                        <i data-lucide="cpu" class="node-icon"></i>
+                        <h3>Raspberry Pi 5</h3>
+                        <p>Controlador central: processamento de imagem, IA e controle do robô</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-flow">
+                    <div class="connector-group">
+                        <div class="connector-item">
+                            <div class="line"></div>
+                            <div class="connector-label">CSI</div>
+                            <div class="node-container">
+                                <div class="node-label">SENSOR</div>
+                                <div class="node card mini">
+                                    <i data-lucide="camera" class="node-icon"></i>
+                                    <h3>Câmera IMX500</h3>
+                                    <p>Sensor Sony 12MP com suporte a visão computacional</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connector-item">
+                            <div class="line"></div>
+                            <div class="connector-label">Inferência</div>
+                            <div class="node-container">
+                                <div class="node-label">INTELIGÊNCIA</div>
+                                <div class="node card mini">
+                                    <i data-lucide="brain" class="node-icon"></i>
+                                    <h3>Modelo de IA</h3>
+                                    <p>MobileNet / YOLOv8 / ResNet para detecção de sujeira</p>
+                                    <div class="tags">
+                                        <span class="tag">MobileNet</span>
+                                        <span class="tag">YOLOv8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connector-item">
+                            <div class="line"></div>
+                            <div class="connector-label">Controle</div>
+                            <div class="node-container">
+                                <div class="node-label">ATUADOR</div>
+                                <div class="node card mini">
+                                    <i data-lucide="bot" class="node-icon"></i>
+                                    <h3>Robô de Limpeza</h3>
+                                    <p>Plataforma móvel com escovas rotativas • ~30m²/h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="connector-v">
+                    <div class="connector-label">Operação</div>
+                </div>
+                <div class="node-container">
+                    <div class="node-label">ALVO</div>
+                    <div class="node card">
+                        <i data-lucide="sun" class="node-icon"></i>
+                        <h3>Painéis Solares</h3>
+                        <p>Campo de painéis fotovoltaicos monitorados e limpos automaticamente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pipeline">
+        <div class="container">
+            <h2 class="section-title">Pipeline de Processamento</h2>
+            <p class="section-subtitle">Fluxo de dados desde a captura até a ação de limpeza</p>           
+            <div class="pipeline-grid">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <i data-lucide="camera"></i>
+                    <p>Captura de Imagem</p>
+                </div>
+                <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <i data-lucide="settings-2"></i>
+                    <p>Pré-processamento</p>
+                </div>
+                <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <i data-lucide="brain-circuit"></i>
+                    <p>Inferência IA</p>
+                </div>
+                <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <i data-lucide="eye"></i>
+                    <p>Detecção de Sujeira</p>
+                </div>
+                <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <i data-lucide="settings"></i>
+                    <p>Decisão de Limpeza</p>
+                </div>
+                <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="step">
+                    <div class="step-num">6</div>
+                    <i data-lucide="check-circle"></i>
+                    <p>Ativação do Robô</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stack">
+        <div class="container">
+            <h2 class="section-title">Stack de Tecnologias</h2>
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <h3>Raspberry Pi 5</h3>
+                    <p>Computação embarcada</p>
+                </div>
+                <div class="stack-card">
+                    <h3>Sony IMX500</h3>
+                    <p>Sensor de câmera 12MP</p>
+                </div>
+                <div class="stack-card">
+                    <h3>OpenCV</h3>
+                    <p>Visão computacional</p>
+                </div>
+                <div class="stack-card">
+                    <h3>PyTorch</h3>
+                    <p>Framework de IA</p>
+                </div>
+                <div class="stack-card">
+                    <h3>Python</h3>
+                    <p>Linguagem de controle</p>
+                </div>
+                <div class="stack-card">
+                    <h3>WiFi</h3>
+                    <p>Comunicação sem fio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="container">
+            <h2 class="section-title">Resultados Esperados</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <i data-lucide="check-circle-2"></i>
+                    <div>
+                        <h3>Detecção Automática</h3>
+                        <p>Identificação de sujeira sem intervenção humana</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <i data-lucide="check-circle-2"></i>
+                    <div>
+                        <h3>Menos Inspeções</h3>
+                        <p>Redução significativa de inspeções manuais</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <i data-lucide="check-circle-2"></i>
+                    <div>
+                        <h3>Mais Eficiência</h3>
+                        <p>Melhoria da eficiência energética da usina</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <i data-lucide="check-circle-2"></i>
+                    <div>
+                        <h3>~30 m²/h</h3>
+                        <p>Capacidade de limpeza automatizada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="Logo Bazi Gestão Empresarial.jpg" alt="">
+        <div class="container">
+            <p>Telefone (92) 99123-4567</p>
+            <p class="footer-sub">• Email contato@bazi.com.br • </p>
+        </div>
+    </footer>
+
+    <script src="scriptEventos.js"></script>
+</body>
+</html>
